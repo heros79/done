@@ -33,4 +33,16 @@ public class BookService {
         }
         return count;
     }
+    public void deleteBook(Book book){
+        this.book = book;
+        int count = book.getCount();
+        if (count > 0)
+        book.setCount(count - 1);
+        for (int i = checkBook.length - 1; i >= 0; i--) {
+            if (checkBook[i]) {
+                checkBook[i] = false;
+                break;
+            }
+        }
+    }
 }
